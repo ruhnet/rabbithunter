@@ -1,0 +1,20 @@
+//rabbithunter_config.json
+//Commented lines represent default values.
+//You may also set any config parameters via the environment variables listed.
+
+{
+//	"amqp_uri":"amqp://guest:guest@localhost:5672",                         // env AMQP_URI
+//	"amqp_sub_exchange":"callevt",                                          // env AMQP_SUB_EXCH
+//	"amqp_pub_exchange":"pushes",                                           // env AMQP_PUB_EXCH
+//	"amqp_exchange_type":"topic",                                           // env AMQP_EXCH_TYPE
+//	"amqp_sub_routing_key":"call.*.*",                                      // env AMQP_SUB_ROUTING_KEY
+//	"amqp_pub_routing_key":"notification.push.customapp.test",              // env AMQP_PUB_ROUTING_KEY
+//	"amqp_workers":2,                                                       // env AMQP_WORKERS
+//	"pub_message_file":"./message.json",                                    // env PUB_MSG_FILE -- send signal USR2 to publish
+//	"filter_event_category":"*",                                            // env FLT_EVT_CAT -- filter event category - comma separate
+//	"filter_event_name":"*",                                                // env FLT_EVT_NAME -- filter event name - comma separate
+//  "filter_event_appname":"*",                                             // env FLT_EVT_APPNAME -- filter event app name - comma separate
+//	"log_file":"/tmp/rabbithunter.log",                                     // env LOG_FILE
+//	"log_level":5                                                           // env LOG_LEVEL (default 5/Notice)
+}
+

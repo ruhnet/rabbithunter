@@ -1,0 +1,27 @@
+{
+  "Account-ID": "52e0c76bfa7a40a1cde6d959921d6218",
+  "To": "5026",
+  "Alert-Key": "IC_SIL",
+  "Alert-Params": [
+    "5032 - 5032 5032"
+  ],
+  "App-Name": "kamailio",
+  "App-Version": "5.5.2",
+  "Call-ID": "48617fa3-55aa-44a0-9465-4606ac0d0c2c",
+  "Event-Category": "notification",
+  "Event-Name": "push_req",
+  "Msg-ID": "1f8a6478-e32e-48a6-b5d1-80416cd4a916",
+  "Node": "kamailio@ke-app1.domain.com",
+  "Payload": {
+    "call-id": "48617fa3-55aa-44a0-9465-4606ac0d0c2c",
+    "caller-id-name": "John Smith",
+    "caller-id-number": "4321",
+    "proxy": "sip:10.150.0.2:7000",
+    "registration-token": "f3651786-1a48-454d-a049-f03446ebadc8"
+  },
+  "Server-ID": "kamailio@ke-app1.domain.com-default<83.8790.22>",
+  "Sound": "ring.caf",
+  "Token-App": "io.domain.com.app",
+  "Token-ID": "121212",
+  "Token-Type": "domain.com"
+}
