@@ -1,3 +1,6 @@
+//RabbitHunter (c) 2023-,  RuhNet
+//Author: Ruel Tmeizeh, RuhNet www.ruhnet.co
+
 package main
 
 import (
