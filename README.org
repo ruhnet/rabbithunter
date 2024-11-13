@@ -1,0 +1,4 @@
+* RabbitHunter
+** An AMQP diagnosis tool.
+
+You can view AMQP events in real time, and publish a test message.

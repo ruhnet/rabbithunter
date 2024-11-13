@@ -47,6 +47,9 @@ func handleAmqpMsg(d rabbitmq.Delivery) rabbitmq.Action {
 				if appconf.FilterEvtCat == "*" || cat == msg.EventCategory {
 					for _, name := range msgNameFilters {
 						if appconf.FilterEvtName == "*" || name == msg.EventName {
+							if appconf.LogLevel > 4 {
+								fmt.Println("RoutingKey: ", string(d.RoutingKey))
+							}
 							fmt.Println(string(d.Body))
 						}
 					}

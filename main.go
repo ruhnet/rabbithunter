@@ -1,4 +1,4 @@
-//RabbitHunter (c) 2023-,  RuhNet
+//RabbitHunter (c) 2023-2024,  RuhNet
 //Author: Ruel Tmeizeh, RuhNet www.ruhnet.co
 
 package main
@@ -17,7 +17,7 @@ import (
 
 const appnameFull string = "RuhNet RabbitHunter AMQP Utility"
 const appname string = "rabbithunter"
-const version string = "0.3"
+const version string = "0.4"
 const serverVersion string = "RuhNet " + appname + " v" + version
 const website string = "https://ruhnet.co"
 
@@ -25,9 +25,9 @@ var startupTime time.Time
 var myHostname, myHostnameShort string
 
 const banner = `
-   ____         __    _    _       __
-  / ___\ __  __/ /_  / \  / /__ __/ /_
- / /_/ // /_/ / _  \/ / \/ //__\_  __/
+--⟶____         __    _    _       __
+-⟶/ ___\ __  __/ /_  / \  / /__ __/ /_
+⟶/ /_/ // /_/ / _  \/ / \/ //__\_  __/
 /_/  \_\\ ___/_/ /_/_/ \__/ \__,/_/   %s
 _____________________________________________________
 `
@@ -62,7 +62,7 @@ func main() {
 	// Setup
 	initConfig()
 
-	fmt.Println("Configuration OK, starting " + appname + "...")
+	//fmt.Println("Configuration OK, starting " + appname + "...")
 	logit(5, "Configuration OK, starting "+appname+"...")
 
 	/////////////////////////////////////////////
@@ -160,6 +160,8 @@ func main() {
 		logit(7, fmt.Sprintf("Message confirmed from RabbitMQ server. tag: %v, ack: %v\n", c.DeliveryTag, c.Ack))
 	})
 
+	fmt.Println("Publish Exchange: [" + appconf.AmqpExchType + "] '" + appconf.AmqpPubExch + "'\nPublish Routing Key: '" + appconf.AmqpPubRoutingKey + "'")
+	fmt.Println("Consume Exchange: [" + appconf.AmqpExchType + "] '" + appconf.AmqpSubExch + "'\nConsume Routing Key: '" + appconf.AmqpSubRoutingKey + "'\nConsume Queue: 'consumer_rabbithunter_" + myHostnameShort + "'")
 	/////////////////////////////////////////////
 	// Message Filters
 	msgCatFilters = strings.Split(appconf.FilterEvtCat, ",")
@@ -168,6 +170,9 @@ func main() {
 	fmt.Println("Filtering event app names matching:", msgAppNameFilters)
 	fmt.Println("Filtering event categories matching:", msgCatFilters)
 	fmt.Println("Filtering event names matching:", msgNameFilters)
+	log.Println("Filtering event app names matching:", msgAppNameFilters)
+	log.Println("Filtering event categories matching:", msgCatFilters)
+	log.Println("Filtering event names matching:", msgNameFilters)
 
 	/////////////////////////////////////////////
 	logit(6, "Using "+fmt.Sprintf("%d", appconf.AmqpWorkers)+" concurrent workers to process AMQP messages.")
